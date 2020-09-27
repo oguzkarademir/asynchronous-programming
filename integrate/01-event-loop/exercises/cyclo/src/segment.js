@@ -17,20 +17,20 @@ export class Segment {
     this.msDelay = this.delayFactor + (x * 5);
     this.innerText = '  \n' + y + '\n\n  ';
     // 2 lines are missing
-
-
+    this.coordinates.x = x;
+    this.coordinates.y = y;
   }
 
   handleClick(view) {
     if (this.isChanging) {
       // 1 line is missing
-
+      clearTimeout(this.timeoutId);
     } else {
       // 1 line is missing
-
+      this.timeoutId = setTimeout(this.timeoutCallback.bind(this, view), this.msDelay);
     };
     // 1 line is missing
-
+    this.isChanging = !this.isChanging;
 
     logger.push({
       coordinates: `${this.coordinates.x}, ${this.coordinates.y}`,
