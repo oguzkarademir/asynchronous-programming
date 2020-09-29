@@ -40,3 +40,6 @@ const func3 = () => {
 
 console.log('this callstack is 3 calls deep');
 func3();
+
+
+console.log('hello');
